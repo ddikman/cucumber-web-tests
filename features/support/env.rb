@@ -1,11 +1,16 @@
 require 'capybara/cucumber'
 require 'selenium/webdriver'
+require 'webdrivers'
 require_relative 'test_settings'
 
-capabilities = Selenium::WebDriver::Remote::Capabilities.new
-capabilities['browserName'] = "chrome"
-
 TestSettings.instance.validate()
+
+Capybara.register_driver :selenium do |app|
+    Webdrivers::Chromedriver.update
+    Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+Capybara.javascript_driver = :chrome
 
 Capybara.configure do |config|
     config.run_server = false

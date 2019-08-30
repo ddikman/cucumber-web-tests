@@ -53,6 +53,10 @@ GEM
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
+    webdrivers (4.1.2)
+      nokogiri (~> 1.6)
+      rubyzip (~> 1.0)
+      selenium-webdriver (>= 3.0, < 4.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
 
@@ -64,6 +68,7 @@ DEPENDENCIES
   cucumber
   rspec-expectations
   selenium-webdriver
+  webdrivers
 
 BUNDLED WITH
    1.17.3
