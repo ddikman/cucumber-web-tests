@@ -10,8 +10,6 @@ Capybara.register_driver :selenium do |app|
     Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
-Capybara.javascript_driver = :chrome
-
 Capybara.configure do |config|
     config.run_server = false
     config.default_driver = :selenium
