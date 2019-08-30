@@ -1,4 +1,5 @@
-# Styler Web Tests
+# Web Tests
+This project is a super tiny start at using Capybara & Cucumber with Ruby to write easily maintainable tests.
 
 ## Setup
 
@@ -7,12 +8,24 @@ rvm install 2.6.0
 bundle install
 ```
 
+The project does not contain any configuration settings so these have to be added before running:
+
+* TEST_USERNAME = the user name to log in with
+* TEST_PASSWORD = the user password
+* TEST_HOST_URL = the url to navigate to when logging in
+
+For example:
+```bash
+export TEST_USERNAME=david@greycastle.se
+export TEST_PASSWORD=ihaventputmyrealpasswordhere
+export TEST_HOST_URL=http://mysite.com/
+```
+
 ## Run
 
 ```bash
 cucumber features
 ```
-
 
 ## Add more tests
 
