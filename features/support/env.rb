@@ -3,11 +3,16 @@ require 'selenium/webdriver'
 require 'webdrivers'
 require_relative 'test_settings'
 
-TestSettings.instance.validate()
+test_settings = TestSettings.instance
+test_settings.validate()
 
-Capybara.register_driver :selenium do |app|
-    Webdrivers::Chromedriver.update
-    Capybara::Selenium::Driver.new(app, browser: :chrome)
+if test_settings.driver == :web
+    Capybara.register_driver :selenium do |app|
+        Webdrivers::Chromedriver.update
+        Capybara::Selenium::Driver.new(app, browser: :chrome)
+    end
+else
+    raise "Unsupported driver supplied: #{test_settings.driver}"
 end
 
 Capybara.configure do |config|
