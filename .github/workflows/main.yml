@@ -1,6 +1,6 @@
 name: Automatic cucumber tests
 
-on: [push]
+on: push
 
 jobs:
   build:
@@ -21,4 +21,9 @@ jobs:
     - name: Run tests
       env:
         HEADLESS: true
-      run: cucumber features
+      run: cucumber features --format junit --out test-results
+    - name: Publish test results
+      uses: EnricoMi/publish-unit-test-result-action@v1
+      if: always()
+      with:
+        files: test-results/*.xml
