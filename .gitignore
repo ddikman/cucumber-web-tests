@@ -1,2 +1,5 @@
 # helper to load secret settings
 .settings*.sh
+
+# test results
+test-results
