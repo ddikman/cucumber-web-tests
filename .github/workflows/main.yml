@@ -23,7 +23,7 @@ jobs:
         HEADLESS: true
       run: cucumber features --format junit --out test-results
     - name: Publish test results
-      uses: EnricoMi/publish-unit-test-result-action@v1
+      uses: mikepenz/action-junit-report@v2
       if: always()
       with:
-        files: test-results/*.xml
+        report_paths: test-results/*.xml
