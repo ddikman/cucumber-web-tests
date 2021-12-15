@@ -1,0 +1,24 @@
+name: Automatic cucumber tests
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up RVM
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6
+    - name: Install Google Chrome
+      run: |
+       chmod +x ./scripts/InstallChrome.sh
+        ./scripts/InstallChrome.sh
+    - name: Get dependencies
+      run: bundle install
+    - name: Run tests
+      env:
+        HEADLESS: true
+      run: cucumber features
