@@ -21,6 +21,14 @@ cucumber features
 
 ![executing tests](./executing-tests.gif)
 
+## Reporting
+
+By default cucumber reports to the console. You can change this by using a reporter
+
+```bash
+cucumber features --format html > report.html
+```
+
 ## Add more tests
 
 Create a new `x.feature` file in the `features` folder and then add in a scenario.
