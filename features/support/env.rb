@@ -19,7 +19,7 @@ end
 driver = :chrome_driver
 if ENV['HEADLESS'] = 'true'
   driver = :chrome_headless
-  print("Running with headless driver")
+  STDERR.puts "Running with headless driver"
 end
 
 Capybara.configure do |config|
