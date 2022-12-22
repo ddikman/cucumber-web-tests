@@ -11,6 +11,8 @@ rvm install 2.6.0
 bundle install
 ```
 
+[rvm](https://rvm.io/) is the Ruby Version Manager and helps you keep your environment clean.
+
 ## Run
 
 ```bash
