@@ -10,7 +10,7 @@ Then("the first match is {string}") do |title|
 end
 
 When("tapping search") do
-    click_button('btnK')
+    click_button('btnK', :match => :first)
 end
 
 When("entering {string}") do |keyword|
@@ -18,5 +18,5 @@ When("entering {string}") do |keyword|
 end
 
 When("tapping I'm lucky") do
-    click_button('btnI')
+    click_button('btnI', :match => :first)
 end
