@@ -11,7 +11,7 @@ jobs:
     - name: Set up RVM
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: 2.7
+        ruby-version: 2.7.8
     - name: Install Google Chrome
       run: |
        chmod +x ./scripts/InstallChrome.sh
