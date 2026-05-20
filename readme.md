@@ -1,3 +1,7 @@
+# Not maintained
+
+This project is no longer maintained but since Cucumber/Capybara hasn't updated a lot in years, it may still be worth as a reference.
+
 # Web testing with Cucumber and Capybara
 
 This project is a small example to show how web testing can be automated with Cucumber and Capybara.
